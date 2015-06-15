@@ -17,4 +17,8 @@ public class ConsoleIO {
     public int readInt() {
         return scanner.nextInt();
     }
+
+    public void print(String data){
+        System.out.println(data);
+    }
 }
