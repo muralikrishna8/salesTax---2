@@ -13,6 +13,7 @@ public class App {
     }
 
     public void start() {
+        consoleIO.print("Enter No.of items: ");
         int noOfItems = consoleIO.readInt();
         String temp = consoleIO.read();
         for (int i = 0; i < noOfItems; i++) {
@@ -20,7 +21,8 @@ public class App {
             SalesTax salesTax = parser.parse(input);
             salesTax.calculate();
         }
-        consoleIO.print(model.getFormattedTotalTax());
-        consoleIO.print(model.getFormattedTotalPrice());
+        consoleIO.print(model.getIndividualPrices());
+        consoleIO.print("Sales Taxes: "+model.getFormattedTotalTax());
+        consoleIO.print("Total: "+model.getFormattedTotalPrice());
     }
 }

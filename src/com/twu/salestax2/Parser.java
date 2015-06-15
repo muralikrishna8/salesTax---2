@@ -36,7 +36,6 @@ public class Parser {
             }
         }
 
-        System.out.println(cost);
         return null;
     }
 

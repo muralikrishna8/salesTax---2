@@ -2,13 +2,15 @@ package com.twu.salestax2;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
 public class ModelTest {
     @Test
     public void shouldBeAbleToCalculateTheSalesTaxForImportedExceptionItems() {
-        Model model = new Model();
+        Model model = new Model(new ArrayList<Double>());
 
         double actualPrice = model.importedExceptionItems(11.25);
 
@@ -17,7 +19,7 @@ public class ModelTest {
 
     @Test
     public void shouldBeAbleToCalculateTheSalesTaxForNonImportedExceptionItems() {
-        Model model = new Model();
+        Model model = new Model(new ArrayList<Double>());
 
         double actualPrice = model.nonImportedExceptionItems(12.49);
 
@@ -26,7 +28,7 @@ public class ModelTest {
 
     @Test
     public void shouldBeAbleToCalculateTheSalesTaxForImportedNonExceptionItems() {
-        Model model = new Model();
+        Model model = new Model(new ArrayList<Double>());
 
         double actualPrice = model.importedNonExceptionItems(47.50);
 
@@ -35,7 +37,7 @@ public class ModelTest {
 
     @Test
     public void shouldBeAbleToCalculateTheSalesTaxForNonImportedNonExceptionItems() {
-        Model model = new Model();
+        Model model = new Model(new ArrayList<Double>());
 
         double actualPrice = model.nonImportedNonExceptionItems(14.99);
 
@@ -44,21 +46,21 @@ public class ModelTest {
 
     @Test
     public void shouldBeAbleToGiveTheTotalPrice() {
-        Model model = new Model();
+        Model model = new Model(new ArrayList<Double>());
 
         model.nonImportedExceptionItems(12.4);
         String actualTotalPrice = model.getFormattedTotalPrice();
 
-        assertThat(actualTotalPrice, is("12.4"));
+        assertThat(actualTotalPrice, is("12.40"));
     }
 
     @Test
     public void shouldBeAbleToGiveTheTotalTax() {
-        Model model = new Model();
+        Model model = new Model(new ArrayList<Double>());
 
         model.nonImportedNonExceptionItems(10);
         String actualTotalTax = model.getFormattedTotalTax();
 
-        assertThat(actualTotalTax, is("1.0"));
+        assertThat(actualTotalTax, is("1.00"));
     }
 }
