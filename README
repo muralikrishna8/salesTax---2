@@ -1,6 +1,8 @@
-sales tax is applicable at a rate of 10% on all goods, except books, food, and medical products that are exempt.
-For imported goods Extra tax of 5% without any exemptions.
+# Sales Tax Problem Two
 
 First enter the number of items for which tax needs to be calculated,
 then enter the items
+
+sales tax is applicable at a rate of 10% on all goods, except books, food, and medical products that are exempt.
+For imported goods Extra tax of 5% without any exemptions.
 
