@@ -19,7 +19,7 @@ public class ModelTest {
     public void shouldBeAbleToCalculateTheSalesTaxForNonImportedExceptionItems() {
         Model model = new Model();
 
-        double actualPrice = model.NonImportedExceptionItems(12.49);
+        double actualPrice = model.nonImportedExceptionItems(12.49);
 
         assertEquals(12.49, actualPrice, 0.00d);
     }
@@ -32,4 +32,14 @@ public class ModelTest {
 
         assertThat(actualPrice, is(54.65));
     }
+
+    @Test
+    public void shouldBeAbleToCalculateTheSalesTaxForNonImportedNonExceptionItems() {
+        Model model = new Model();
+
+        double actualPrice = model.nonImportedNonExceptionItems(14.99);
+
+        assertEquals(16.49, actualPrice, 0.001);
+    }
+
 }

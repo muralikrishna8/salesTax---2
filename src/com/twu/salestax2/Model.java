@@ -16,7 +16,7 @@ public class Model {
         return cost + serviceTax;
     }
 
-    public double NonImportedExceptionItems(double cost) {
+    public double nonImportedExceptionItems(double cost) {
         totalPrice += cost;
 
         return cost;
@@ -28,6 +28,16 @@ public class Model {
 
         totalPrice += (cost + serviceTax);
         totalTax += serviceTax;
+        return cost + serviceTax;
+    }
+
+    public double nonImportedNonExceptionItems(double cost) {
+        double serviceTax = (cost * 10) / 100;
+        serviceTax = RoundDouble.roundUp(serviceTax, 0.05);
+
+        totalPrice += (cost + serviceTax);
+        totalTax += serviceTax;
+
         return cost + serviceTax;
     }
 }
