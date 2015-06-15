@@ -60,7 +60,7 @@ public class ImportedExceptionItemTest {
     
         assertFalse(importedExcetionItem.equals(null));
     }
-    
+
     @Test
     public void equalityShouldReturnFalseOnPassingOtherObject() {
         ImportedExceptionItem importedExcetionItem = new ImportedExceptionItem(model, 4.0);
