@@ -18,6 +18,22 @@ public class Parser {
             if(item.contains("perfume")){
                 return  new ImportedNonExceptionItem(model, cost);
             }
+        } else {
+            if(item.contains("chocolate")){
+                return new NonImportedExceptionItem(model, cost);
+            }
+            if(item.contains("CD")){
+                return new NonImportedNonExceptionItem(model, cost);
+            }
+            if(item.contains("perfume")) {
+                return new NonImportedNonExceptionItem(model, cost);
+            }
+            if(item.contains("book")) {
+                return new NonImportedExceptionItem(model, cost);
+            }
+            if(item.contains("pills")) {
+                return new NonImportedExceptionItem(model, cost);
+            }
         }
 
         System.out.println(cost);
