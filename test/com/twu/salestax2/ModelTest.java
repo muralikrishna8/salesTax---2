@@ -42,4 +42,23 @@ public class ModelTest {
         assertEquals(16.49, actualPrice, 0.001);
     }
 
+    @Test
+    public void shouldBeAbleToGiveTheTotalPrice() {
+        Model model = new Model();
+
+        model.nonImportedExceptionItems(12.4);
+        String actualTotalPrice = model.getFormattedTotalPrice();
+
+        assertThat(actualTotalPrice, is("12.4"));
+    }
+
+    @Test
+    public void shouldBeAbleToGiveTheTotalTax() {
+        Model model = new Model();
+
+        model.nonImportedNonExceptionItems(10);
+        String actualTotalTax = model.getFormattedTotalTax();
+
+        assertThat(actualTotalTax, is("1.0"));
+    }
 }

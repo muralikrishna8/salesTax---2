@@ -3,6 +3,7 @@ package com.twu.salestax2;
 public class Model {
     private double totalPrice;
     private double totalTax;
+
     public Model() {
 
     }
@@ -39,5 +40,13 @@ public class Model {
         totalTax += serviceTax;
 
         return cost + serviceTax;
+    }
+
+    public String getFormattedTotalPrice() {
+        return totalPrice + "";
+    }
+
+    public String getFormattedTotalTax() {
+        return totalTax + "";
     }
 }
