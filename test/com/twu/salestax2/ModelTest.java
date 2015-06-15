@@ -14,4 +14,13 @@ public class ModelTest {
 
         assertThat(actualPrice, is(11.85));
     }
+
+    @Test
+    public void shouldBeAbleToCalculateTheSalesTaxForNonImportedExceptionItems() {
+        Model model = new Model();
+
+        double actualPrice = model.NonImportedExceptionItems(12.49);
+
+        assertEquals(12.49, actualPrice, 0.00d);
+    }
 }

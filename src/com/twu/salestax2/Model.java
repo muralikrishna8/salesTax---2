@@ -13,7 +13,12 @@ public class Model {
 
         totalPrice += (cost + serviceTax);
         totalTax += serviceTax;
-        git
         return cost + serviceTax;
+    }
+
+    public double NonImportedExceptionItems(double cost) {
+        totalPrice += cost;
+
+        return cost;
     }
 }
